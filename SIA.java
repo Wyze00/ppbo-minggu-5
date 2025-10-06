@@ -115,6 +115,17 @@ class Sarjana extends Mahasiswa {
     public void addMataKuliah(MatkulAmbil mk) {
         this.mataKuliahDiambil.add(mk);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Mata Kuliah Diambil: \n");
+        for (MatkulAmbil mk : mataKuliahDiambil) {
+            sb.append("\t");
+            sb.append(mk.toString()).append("\n");
+        }
+        return sb.toString();
+    }
 }
 
 class Magister extends Sarjana {
@@ -131,6 +142,13 @@ class Magister extends Sarjana {
 
     public void setJudulTesis(String judulTesis) {
         this.judulTesis = judulTesis;   
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Judul Tesis: ").append(judulTesis).append("\n");
+        return sb.toString();
     }
 }
 
@@ -176,6 +194,16 @@ class Doktor extends Mahasiswa {
     public void setNilaiSidang3(int nilaiSidang3) {
         this.nilaiSidang3 = nilaiSidang3;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Judul Disertasi: ").append(judulDisertasi).append("\n");
+        sb.append("Nilai Sidang 1: ").append(nilaiSidang1).append("\n");
+        sb.append("Nilai Sidang 2: ").append(nilaiSidang2).append("\n");
+        sb.append("Nilai Sidang 3: ").append(nilaiSidang3).append("\n");
+        return sb.toString();
+    }
 }
 
 class Staff extends User {
@@ -192,6 +220,15 @@ class Staff extends User {
 
     public void setNip(String nip) {
         this.nip = nip;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+
+        sb.append("NIP: ").append(nip).append("\n");
+
+        return sb.toString();
     }
 }
 
@@ -219,6 +256,18 @@ class Dosen extends Staff {
     public void addMataKuliahDiajar(MatkulAjar mk) {
         this.mataKuliahDiajar.add(mk);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Departement: ").append(departement).append("\n");
+        sb.append("Mata Kuliah Diajar: \n");
+        for (MatkulAjar mk : mataKuliahDiajar) {
+            sb.append("\t");
+            sb.append(mk.toString()).append("\n");
+        }
+        return sb.toString();
+    }
 }
 
 class DosenTetap extends Dosen {
@@ -236,6 +285,13 @@ class DosenTetap extends Dosen {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Salary: ").append(salary).append("\n");
+        return sb.toString();
+    }
 }
 
 class DosenHonorer extends Dosen {
@@ -252,6 +308,13 @@ class DosenHonorer extends Dosen {
 
     public void setHonorPerSks(int honorPerSks) {
         this.honorPerSks = honorPerSks;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Honor Per SKS: ").append(honorPerSks).append("\n");
+        return sb.toString();
     }
 }
 
@@ -278,6 +341,18 @@ class Karyawan extends Staff {
 
     public void addPresensiStaff(PresensiStaff presensi) {
         this.PresensiStaffList.add(presensi);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Salary: ").append(salary).append("\n");
+        sb.append("Presensi Staff: \n");
+        for (PresensiStaff ps : PresensiStaffList) {
+            sb.append("\t");
+            sb.append(ps.toString()).append("\n");
+        }
+        return sb.toString();
     }
 }
 
@@ -314,6 +389,17 @@ class MataKuliah {
     public void setSks(int sks) {
         this.sks = sks;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Kode: ").append(kode).append("\n");
+        sb.append("Nama: ").append(nama).append("\n");
+        sb.append("SKS: ").append(sks).append("\n");
+
+        return sb.toString();
+    }
 }
 
 class MataKuliahPilihan extends MataKuliah {
@@ -328,6 +414,13 @@ class MataKuliahPilihan extends MataKuliah {
     }
     public void setJumblahMinimumPeserta(int jumblahMinimumPeserta) {
         this.jumblahMinimumPeserta = jumblahMinimumPeserta;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Jumlah Minimum Peserta: ").append(jumblahMinimumPeserta).append("\n");
+        return sb.toString();
     }
 }
 
@@ -355,6 +448,16 @@ class Presensi{
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Tanggal: ").append(tanggal).append("\n");
+        sb.append("Status: ").append(status).append("\n");
+
+        return sb.toString();
+    }
 }
 
 class PresensiStaff extends Presensi {
@@ -371,6 +474,13 @@ class PresensiStaff extends Presensi {
 
     public void setJam(int jam) {
         this.jam = jam;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Jam: ").append(jam).append("\n");
+        return sb.toString();
     }
 }
 
@@ -425,6 +535,21 @@ class MatkulAmbil {
     public void addPresensi(Presensi presensi) {
         this.presensiList.add(presensi);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Mata Kuliah: \n").append(mataKuliah.toString());
+        sb.append("Nilai 1: ").append(n1).append("\n");
+        sb.append("Nilai 2: ").append(n2).append("\n");
+        sb.append("Nilai 3: ").append(n3).append("\n");
+        sb.append("Presensi: \n");
+        for (Presensi p : presensiList) {
+            sb.append("\t");
+            sb.append(p.toString()).append("\n");
+        }
+        return sb.toString();
+    }
 }
 
 class MatkulAjar {
@@ -449,6 +574,18 @@ class MatkulAjar {
 
     public void addPresensiStaff(PresensiStaff presensiStaff) {
         this.presensiStaffList.add(presensiStaff);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Mata Kuliah: \n").append(mataKuliah.toString());
+        sb.append("Presensi Staff: \n");
+        for (PresensiStaff ps : presensiStaffList) {
+            sb.append("\t");
+            sb.append(ps.toString()).append("\n");
+        }
+        return sb.toString();
     }
 }
 
