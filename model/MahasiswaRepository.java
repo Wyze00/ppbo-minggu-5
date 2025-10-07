@@ -14,4 +14,15 @@ public class MahasiswaRepository {
     public ArrayList<Mahasiswa> getMahasiswaList() {
         return mahasiswaList;
     }
+
+    public Mahasiswa getMahasiswaByNIM(String nim) {
+
+        for(Mahasiswa m : mahasiswaList){
+            if (m.getNim().equalsIgnoreCase(nim)) {
+                return m;
+            }
+        }
+
+        return null;
+    }
 }
