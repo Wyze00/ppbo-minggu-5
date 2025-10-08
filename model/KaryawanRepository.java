@@ -13,4 +13,13 @@ public class KaryawanRepository {
     public ArrayList<Karyawan> getKaryawanList() {
         return karyawanList;
     }
+
+    public Karyawan getKaryawanByNIP(String nip) {
+        for (Karyawan karyawan : karyawanList) {
+            if (karyawan.getNip().equals(nip)) {
+                return karyawan;
+            }
+        }
+        return null;
+    }
 }

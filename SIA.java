@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import controller.DosenController;
+import controller.KaryawanController;
 import controller.MahasiswaController;
 import controller.MainController;
 import controller.MatKulController;
@@ -10,8 +12,12 @@ import model.dto.Magister;
 import model.dto.MatkulAmbil;
 import model.dto.Presensi;
 import model.dto.Status;
+import view.DosenView;
+import view.KaryawanView;
 import view.MahasiswaView;
 import view.MatKulView;
+import model.DosenRepository;
+import model.KaryawanRepository;
 import model.MahasiswaRepository;
 import model.MatKulRepository;
 import model.dto.Dosen;
@@ -94,9 +100,21 @@ public class SIA {
         MahasiswaView mahasiswaView = new MahasiswaView();
         MahasiswaController mahasiswaController = new MahasiswaController(mahasiswaRepository, mahasiswaView, matKulRepository);
         mahasiswaView.setMahasiswaController(mahasiswaController);
+
+        // Init Karyawan
+        KaryawanRepository karyawanRepository = new KaryawanRepository();
+        KaryawanView karyawanView = new KaryawanView();
+        KaryawanController karyawanController = new KaryawanController(karyawanRepository, karyawanView);
+        karyawanView.setKaryawanController(karyawanController);
+
+        // Init Dosen
+        DosenRepository dosenRepository = new DosenRepository();
+        DosenView dosenView = new DosenView();
+        DosenController dosenController = new DosenController(dosenRepository, dosenView, matKulRepository);
+        dosenView.setDosenController(dosenController);
         
         // Init App
-        MainController mainController = new MainController(mahasiswaController, matKulController);
+        MainController mainController = new MainController(mahasiswaController, matKulController, karyawanController, dosenController);
         mainController.start();
     }
 }

@@ -1,5 +1,6 @@
 package util;
 
+import model.dto.Status;
 import javax.swing.JOptionPane;
 
 public class Dialog {
@@ -27,6 +28,11 @@ public class Dialog {
     public static int inputInt(String message) {
         String input = JOptionPane.showInputDialog(null, message, "", JOptionPane.PLAIN_MESSAGE);
         return Integer.parseInt(input);
+    }
+
+    public static Status inputStatus(String message) {
+        String input = JOptionPane.showInputDialog(null, message, "", JOptionPane.PLAIN_MESSAGE);
+        return Status.valueOf(input.toUpperCase());
     }
 }
 

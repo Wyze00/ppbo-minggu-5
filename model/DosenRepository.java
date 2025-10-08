@@ -14,4 +14,13 @@ public class DosenRepository {
     public ArrayList<Dosen> getDosenList() {
         return dosenList;
     }
+
+    public Dosen getDosenByNIP(String nip) {
+        for (Dosen dosen : dosenList) {
+            if (dosen.getNip().equalsIgnoreCase(nip)) {
+                return dosen;
+            }
+        }
+        return null;
+    }
 }
