@@ -16,7 +16,6 @@ public class MainController {
     }
 
     public void start() {
-
         StringBuilder menu = new StringBuilder();
         menu.append("=== Pilih Menu ===\n");
         menu.append("1. Menu Mahasiswa\n");

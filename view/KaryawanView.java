@@ -18,9 +18,9 @@ public class KaryawanView {
     public void menu(){
         StringBuilder menu = new StringBuilder();
         menu.append("=== Menu Karyawan ===\n");
-        menu.append("1. Tambah Mahasiswa Sarjana\n");
-        menu.append("2. Tambah Mahasiswa Magister\n");
-        menu.append("3. Tambah MatKul Mahasiswa\n");
+        menu.append("1. Tambah Karyawan\n");
+        menu.append("2. Print Semua Karyawan\n");
+        menu.append("3. Tambah Absen Karyawan\n");
         menu.append("4. Kembali\n");
 
         int pilihan =  Dialog.inputInt(menu.toString());
@@ -46,11 +46,11 @@ public class KaryawanView {
     }
 
     public void inputKaryawan(){
+        String nip = Dialog.inputString("Masukkan NIP karyawan: ");
         String nama = Dialog.inputString("Masukkan nama karyawan: ");
         String alamat = Dialog.inputString("Masukkan alamat karyawan: ");
         String ttl = Dialog.inputString("Masukkan tanggal lahir karyawan: ");
         String telepon = Dialog.inputString("Masukkan nomor telepon karyawan: ");
-        String nip = Dialog.inputString("Masukkan NIP karyawan: ");
         int salary = Dialog.inputInt("Masukkan gaji karyawan: ");
 
         karyawanController.insertKaryawan(nama, alamat, ttl, telepon, nip, salary);
