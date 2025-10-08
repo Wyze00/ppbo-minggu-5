@@ -72,5 +72,11 @@ public class SIA {
         // Init App
         MainController mainController = new MainController(mahasiswaController, matKulController, karyawanController, dosenController);
         mainController.start();
+
+        // Uncomment kalau mau lihat semua data
+        // matKulController.printAllMatKul();
+        // mahasiswaController.printAllMahasiswa();
+        // karyawanController.printAllKaryawan();
+        // dosenController.printAllDosen();
     }
 }
