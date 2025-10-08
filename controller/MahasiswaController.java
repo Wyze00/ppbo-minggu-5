@@ -44,7 +44,7 @@ public class MahasiswaController {
         Mahasiswa mhs = mahasiswaRepository.getMahasiswaByNIM(nim);
         MataKuliah matKul = matKulRepository.getMatKulByKode(kode);
 
-        if(mhs instanceof Sarjana) {
+        if(mhs instanceof Sarjana && matKul != null) {
             ((Sarjana)mhs).addMataKuliah(new MatkulAmbil(matKul, 0, 0, 0));
         }
     }

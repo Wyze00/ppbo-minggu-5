@@ -22,11 +22,11 @@ public class DosenController {
         dosenView.menu();
     }
 
-    public void addDosenTetap(String nama, String alamat, String ttl, String telepon, String nip, String departement, int salary) {
+    public void tambahDosenTetap(String nama, String alamat, String ttl, String telepon, String nip, String departement, int salary) {
         dosenRepository.addDosen(new DosenTetap(nama, alamat, ttl, telepon, nip, departement, salary));
     }
 
-    public void addDosenHonorer(String nama, String alamat, String ttl, String telepon, String nip, String departement, int honorPerSks) {
+    public void tambahDosenHonorer(String nama, String alamat, String ttl, String telepon, String nip, String departement, int honorPerSks) {
         dosenRepository.addDosen(new DosenHonorer(nama, alamat, ttl, telepon, nip, departement, honorPerSks));
     }
 
@@ -34,7 +34,7 @@ public class DosenController {
         dosenView.printDosenList(dosenRepository.getDosenList());
     }
 
-    public void addDosenAjarMatKul(String nip, String kode) {
+    public void tambahDosenAjarMatKul(String nip, String kode) {
         var dosen = dosenRepository.getDosenByNIP(nip);
         var matkul = matKulRepository.getMatKulByKode(kode);
 

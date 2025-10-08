@@ -53,7 +53,7 @@ public class KaryawanView {
         String telepon = Dialog.inputString("Masukkan nomor telepon karyawan: ");
         int salary = Dialog.inputInt("Masukkan gaji karyawan: ");
 
-        karyawanController.insertKaryawan(nama, alamat, ttl, telepon, nip, salary);
+        karyawanController.tambahKaryawan(nama, alamat, ttl, telepon, nip, salary);
     }
 
     public void inputKaryawanTambahAbsen(){

@@ -58,7 +58,7 @@ public class DosenView {
         String departement = Dialog.inputString("Departement Dosen Tetap:");
         int salary = Dialog.inputInt("Salary Dosen Tetap:");
 
-        dosenController.addDosenTetap(nama, alamat, ttl, telepon, nip, departement, salary);
+        dosenController.tambahDosenTetap(nama, alamat, ttl, telepon, nip, departement, salary);
     }
 
     public void inputDosenHonorer() {
@@ -70,7 +70,7 @@ public class DosenView {
         String departement = Dialog.inputString("Departement Dosen Honorer:");
         int honorPerSks = Dialog.inputInt("Honor Per SKS Dosen Honorer:");
 
-        dosenController.addDosenHonorer(nama, alamat, ttl, telepon, nip, departement, honorPerSks);
+        dosenController.tambahDosenHonorer(nama, alamat, ttl, telepon, nip, departement, honorPerSks);
     }
 
     public void printDosenList(ArrayList<Dosen> allDosen) {
@@ -83,6 +83,6 @@ public class DosenView {
         String nip = Dialog.inputString("NIP Dosen:");
         String kode = Dialog.inputString("Kode MatKul:");
 
-        dosenController.addDosenAjarMatKul(nip, kode);
+        dosenController.tambahDosenAjarMatKul(nip, kode);
     }
 }
